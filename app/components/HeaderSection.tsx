@@ -66,7 +66,7 @@ const HeaderSection = () => {
                                     fontSize: { xs: "1.1rem", md: "1.4rem" }
                                 }}
                             >
-                                I&aposm; a passionate student with a strong interest in math, finance, accounting, and bookkeeping. I have a deep love for coding and computer science, and I&aposm;m skilled in subjects like math and physics. Learning is a key part of who I am, and I enjoy tackling new challenges. Outside of academics, I&aposm;m a talented football (soccer) player, and I have a great passion for the sport. I&aposm;m always eager to grow and expand my knowledge across various fields.
+                                I am a passionate student with a strong interest in math, finance, accounting, and bookkeeping. I have a deep love for coding and computer science, and I am  skilled in subjects like math and physics. Learning is a key part of who I am, and I enjoy tackling new challenges. Outside of academics, I am a talented football (soccer) player, and I have a great passion for the sport. I am always eager to grow and expand my knowledge across various fields.
                             </Typography>
                         </Box>
                     </Grid2>
