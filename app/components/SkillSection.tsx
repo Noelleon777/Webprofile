@@ -15,31 +15,30 @@ const SkillSection = () => {
                     margin: '0 auto',
 
                 }}>
-                    <Box sx={{ backgroundColor: "#7EC8E3", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
-                        <Typography textAlign={"center"} fontWeight={'bold'}>Python</Typography>
+                    <Box sx={{ backgroundColor: "#0047AB", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
+                        <Typography textAlign={"center"} fontWeight={'bold'} color={'#FFFF00'}>PYTHON</Typography>
                     </Box>
                 </Grid2>
                 <Grid2 size={{ xs: 12, md: 4 }}>
-                    <Box>
-                        <Typography>HTML,CSS</Typography>
-
+                    <Box sx={{ backgroundColor: "#FFA500", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
+                        <Typography textAlign={"center"} fontWeight={'bold'} color={'#0096FF'}>HTML,CSS</Typography>
                     </Box>
                 </Grid2>
                 <Grid2 size={{ xs: 12, md: 4 }}>
-                    <Box>
-                        <Typography>React</Typography>
-
+                    <Box sx={{ backgroundColor: "#89CFF0", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
+                        <Typography textAlign={"center"} fontWeight={'bold'} color={'#FFFFFF'}>REACT</Typography>
                     </Box>
                 </Grid2>
                 <Grid2 size={{ xs: 12, md: 4 }}>
-                    <Box>
-                        <Typography>React-Native</Typography>
+                    <Box sx={{ backgroundColor: "#000000", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
+                        <Typography textAlign={"center"} fontWeight={'bold'} color={'#89CFF0'}>React-NATIVE</Typography>
 
                     </Box>
+
                 </Grid2>
                 <Grid2 size={{ xs: 12, md: 4 }} >
-                    <Box>
-                        <Typography>NodeJS</Typography>
+                    <Box sx={{ backgroundColor: "#808080", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
+                        <Typography textAlign={"center"} fontWeight={'bold'} color={'#454B1B'}>NodeJS</Typography>
                     </Box>
                 </Grid2>
             </Grid2>
