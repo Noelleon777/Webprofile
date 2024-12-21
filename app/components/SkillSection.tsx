@@ -8,13 +8,8 @@ const SkillSection = () => {
             <Typography variant="h1" textAlign={"center"}>
                 My Skills
             </Typography>
-            <Grid2 container marginTop={5}>
-                <Grid2 size={{ xs: 12, md: 4 }} sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    margin: '0 auto',
-
-                }}>
+            <Grid2 container marginTop={5} spacing={3} marginBottom={5}>
+                <Grid2 size={{ xs: 12, md: 4 }} >
                     <Box sx={{ backgroundColor: "#0047AB", padding: 3, borderRadius: 18, justifyContent: "center", alignItems: "center", width: { xs: '80%', md: '80%' } }}>
                         <Typography textAlign={"center"} fontWeight={'bold'} color={'#FFFF00'}>PYTHON</Typography>
                     </Box>
