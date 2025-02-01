@@ -7,24 +7,27 @@ import Footer from "../components/Footer";
 
 const Contact = () => {
     return (
-        <Box><ResponsiveAppBar />
+        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <ResponsiveAppBar />
+
             <Box
                 sx={{
-                    backgroundColor: "#white",
-                    height: '90vh',
+                    backgroundColor: "white",
+                    flexGrow: 1,
+                    py: { xs: 4, md: 6 },
                     display: "flex",
-                    py: 4,
-                    justifyItems: 'center',
-                    alignItems: 'center'
+                    alignItems: "center"
                 }}
             >
                 <Container maxWidth="lg">
                     <Grid2
                         container
-                        spacing={4}
+                        spacing={{ xs: 4, md: 6 }}
+                        alignItems="center"
                         justifyContent="center"
                     >
                         <Grid2
+                            size={{ xs: 12, md: 6 }}
                             sx={{
                                 display: "flex",
                                 justifyContent: "center",
@@ -34,84 +37,137 @@ const Contact = () => {
                             <Avatar
                                 src="/contact.jpg"
                                 sx={{
-                                    width: { xs: 200, md: 500 },
-                                    height: { xs: 200, md: 500 },
-                                    border: '4px solid white'
+                                    width: { xs: 240, sm: 300, md: 400, lg: 500 },
+                                    height: { xs: 240, sm: 300, md: 400, lg: 500 },
+                                    border: '4px solid white',
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                                    transition: 'transform 0.3s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        cursor: 'pointer'
+                                    }
                                 }}
                             />
                         </Grid2>
+
                         <Grid2
+                            size={{ xs: 12, md: 6 }}
                             sx={{
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
                         >
-                            <Box sx={{
-                                textAlign: { xs: "center", sm: "left" },
-                                maxWidth: "500px",
-                                display: "flex",
-                                gap: 2,
-                                flexDirection: "column"
-                            }}>
+                            <Box
+                                sx={{
+                                    width: '100%',
+                                    maxWidth: "500px",
+                                    display: "flex",
+                                    gap: 3,
+                                    flexDirection: "column",
+                                    px: { xs: 2, sm: 4 }
+                                }}
+                            >
                                 <Typography
                                     variant="h2"
                                     component="h1"
                                     sx={{
                                         fontWeight: "bold",
-                                        mb: 2,
-
-                                        fontSize: { xs: "2.5rem", md: "3.5rem" }
+                                        fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+                                        textAlign: { xs: "center", md: "left" },
+                                        mb: { xs: 2, md: 4 }
                                     }}
                                 >
                                     Feel free to contact me
-
                                 </Typography>
-                                <a href="http://www.instagram.com/Noell_Na_Nongkhai">
-                                    <Box sx={{ display: "flex   " }}>
-                                        <Person />
-                                        <Box width={7}> </Box>
-                                        <Typography>
-                                            Noel Athithan Na Nongkhai
-                                        </Typography>
-                                    </Box>
-                                </a>
-                                <a>
-                                    <Box sx={{ display: "flex   " }}>
-                                        <Email />
-                                        <Box width={7}> </Box>
-                                        <Typography>
-                                            athithaan@gmail.com
-                                        </Typography>
-                                    </Box>
-                                </a>
-                                <a>
-                                    <Box sx={{ display: "flex   " }}>
-                                        <Phone />
-                                        <Box width={7}> </Box>
-                                        <Typography>
-                                            +66 92 962 8115
 
-                                        </Typography>
-                                    </Box>
-                                </a>
-                                <a href="http://www.instagram.com/Noell_Na_Nongkhai">
-                                    <Box sx={{ display: "flex   " }}>
-                                        <Instagram />
-                                        <Box width={7}> </Box>
-                                        <Typography>
-                                            @Noell_Na_Nongkhai
-                                        </Typography>
-                                    </Box>
-                                </a>
+                                {/* Contact Links */}
+                                <Box sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 2.5
+                                }}>
+                                    <a href="http://www.instagram.com/Noell_Na_Nongkhai" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Box sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            transition: 'transform 0.2s',
+                                            '&:hover': {
+                                                transform: 'translateX(8px)'
+                                            }
+                                        }}>
+                                            <Person sx={{ fontSize: { xs: 24, md: 28 } }} />
+                                            <Box width={12} />
+                                            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' } }}>
+                                                Noel Athithan Na Nongkhai
+                                            </Typography>
+                                        </Box>
+                                    </a>
 
+                                    <a href="mailto:athithaan@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Box sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            transition: 'transform 0.2s',
+                                            '&:hover': {
+                                                transform: 'translateX(8px)'
+                                            }
+                                        }}>
+                                            <Email sx={{ fontSize: { xs: 24, md: 28 } }} />
+                                            <Box width={12} />
+                                            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' } }}>
+                                                athithaan@gmail.com
+                                            </Typography>
+                                        </Box>
+                                    </a>
+
+                                    <a href="tel:+66929628115" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Box sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            transition: 'transform 0.2s',
+                                            '&:hover': {
+                                                transform: 'translateX(8px)'
+                                            }
+                                        }}>
+                                            <Phone size={24} />
+                                            <Box width={12} />
+                                            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' } }}>
+                                                +66 92 962 8115
+                                            </Typography>
+                                        </Box>
+                                    </a>
+
+                                    <a href="http://www.instagram.com/Noell_Na_Nongkhai"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', color: 'inherit' }}
+                                    >
+                                        <Box sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            transition: 'transform 0.2s',
+                                            '&:hover': {
+                                                transform: 'translateX(8px)'
+                                            }
+                                        }}>
+                                            <Instagram sx={{ fontSize: { xs: 24, md: 28 } }} />
+                                            <Box width={12} />
+                                            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' } }}>
+                                                @Noell_Na_Nongkhai
+                                            </Typography>
+                                        </Box>
+                                    </a>
+                                </Box>
                             </Box>
                         </Grid2>
                     </Grid2>
                 </Container>
-                <Footer />
-            </Box></Box>
+            </Box>
+
+            <Footer />
+        </Box>
     );
-}
+};
 
 export default Contact;

@@ -1,49 +1,214 @@
-import { Box, Container, Grid2, Typography } from "@mui/material";
-import React from "react";
+"use client"
+import { Box, Container, Grid2, Typography, Dialog } from "@mui/material";
+import React, { useState } from "react";
 import ResponsiveAppBar from "../components/ResponsiveNavbar";
 import Image from "next/image";
+import Footer from "../components/Footer";
+import { Close } from "@mui/icons-material";
+
 const BusinessPage = () => {
-    return <Box>
-        <ResponsiveAppBar />
-        <Box sx={{
-            backgroundColor: "#2e2b2b",
-            height: '90vh',
-            display: "flex",
-            py: 4,
-            justifyItems: 'center',
-            alignItems: 'center',
-            flexDirection: 'column'
-        }}>
-            <Typography variant="h1" color="white"> Business Fair </Typography>
-            <Container>
-                <Grid2 container>
-                    <Grid2 size={6} >
-                        <Box sx={{
-                            border: 2, borderColor: 'white', padding: 5, borderRadius: 7
-                        }}>
-                            <Typography color="white">As a teen, I took on the challenge of running my own food stall at a week-long local school fair, where I served up delicious Wagyu Beef Fried Rice. This experience gave me hands-on exposure to the full spectrum of running a business—from managing a team and handling logistics to perfecting my cooking skills. Throughout the week, I learned how to balance customer demand, problem-solve on the fly, and keep everything running smoothly in a fast-paced environment. I also gained valuable insight into marketing and team coordination, which were essential in making the event a success. It was an incredible opportunity to apply my passion for cooking while developing essential business skills in a real-world setting.</Typography>
-                        </Box>
-                    </Grid2>
-                    <Grid2 size={6}>
-                        <Image src="/goal.png" width={300} height={300} alt={""} />
-                    </Grid2>
-                    <Grid2 size={6} >
-                        <Box sx={{
-                            border: 2, borderColor: 'white', padding: 5, borderRadius: 7
-                        }}>
-                            <Typography color="white">While serving up delicious Wagyu Beef Fried Rice at the school fair, I also took on the crucial behind-the-scenes responsibilities of managing the financial side of the business. I handled everything from calculating profits and expenses to creating detailed business dossiers, financial balance sheets, and tax calculations. I also kept track of bookkeeping and accounting, ensuring that all transactions were recorded accurately and that I had a clear picture of the business’s financial health. This experience helped me develop a strong understanding of how to run a sustainable business, manage cash flow, and make data-driven decisions. Balancing both the hands-on and financial aspects of the operation gave me invaluable skills in business strategy and financial management.
+    const [selectedImage, setSelectedImage] = useState<string | null>();
 
-                            </Typography>
-                        </Box>
-                    </Grid2>
-                    <Grid2 size={6}>
-                        <Image src="/goal.png" width={300} height={300} alt={""} />
-                    </Grid2>
-                </Grid2>
-            </Container>
+    const handleImageClick = (imageSrc: string) => {
+        setSelectedImage(imageSrc);
+    };
 
+    const handleClosePreview = () => {
+        setSelectedImage(null);
+    };
+
+    return (
+        <Box>
+            <ResponsiveAppBar />
+
+            <Box
+                sx={{
+                    backgroundColor: "#2e2b2b",
+                    flexGrow: 1,
+                    py: 6,
+                }}
+            >
+                <Container maxWidth="lg">
+                    <Typography
+                        variant="h2"
+                        component="h1"
+                        color="white"
+                        align="center"
+                        sx={{ mb: 6 }}
+                    >
+                        Business Fair
+                    </Typography>
+
+                    <Typography
+                        variant="h4"
+                        color="white"
+                        align="center"
+                        sx={{ mb: 6, textDecoration: 'underline' }}
+                    >
+                        Entrepreneurship fair
+                    </Typography>
+
+                    {/* First Card */}
+                    <Grid2 container spacing={4} sx={{ mb: 4 }}>
+                        <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Box
+                                sx={{
+                                    border: 2,
+                                    borderColor: 'white',
+                                    padding: 4,
+                                    borderRadius: 7,
+                                    height: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}
+                            >
+                                <Typography fontSize={27} color="white">
+                                    Experiencing running a business dealing with the front work and backstage responsibilities.
+                                </Typography>
+                            </Box>
+                        </Grid2>
+                        <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Box
+                                onClick={() => handleImageClick('/fairb.JPG')}
+                                sx={{
+                                    position: 'relative',
+                                    width: '100%',
+                                    height: { xs: '300px', md: '400px' },
+                                    overflow: 'hidden',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.3s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'scale(1.02)'
+                                    }
+                                }}
+                            >
+                                <Image
+                                    src="/fairb.JPG"
+                                    alt="Business Goals"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                    priority
+                                />
+                            </Box>
+                        </Grid2>
+                    </Grid2>
+
+                    <Typography
+                        variant="h4"
+                        color="white"
+                        align="center"
+                        sx={{ mb: 6, textDecoration: 'underline' }}
+                    >
+                        Sales & profit
+                    </Typography>
+
+                    {/* Second Card */}
+                    <Grid2 container spacing={4}>
+                        <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Box
+                                sx={{
+                                    border: 2,
+                                    borderColor: 'white',
+                                    padding: 4,
+                                    borderRadius: 7,
+                                    height: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}
+                            >
+                                <Typography color="white" fontSize={27}>
+                                    After 5 days of the business fair we generated 53,000thb in sale
+                                </Typography>
+                            </Box>
+                        </Grid2>
+                        <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Box
+                                onClick={() => handleImageClick('/Noblesales.png')}
+                                sx={{
+                                    position: 'relative',
+                                    width: '100%',
+                                    height: { xs: '300px', md: '400px' },
+                                    overflow: 'hidden',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.3s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'scale(1.02)'
+                                    }
+                                }}
+                            >
+                                <Image
+                                    src="/Noblesales.png"
+                                    alt="Profile"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                    priority
+                                />
+                            </Box>
+                        </Grid2>
+                    </Grid2>
+                </Container>
+            </Box>
+
+            {/* Image Preview Dialog */}
+            <Dialog
+                open={!!selectedImage}
+                onClose={handleClosePreview}
+                maxWidth="xl"
+                onClick={handleClosePreview}
+            >
+                <Box
+                    sx={{
+                        position: 'relative',
+                        backgroundColor: 'black',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Close
+                        onClick={handleClosePreview}
+                        sx={{
+                            position: 'absolute',
+                            top: 8,
+                            right: 8,
+                            color: 'white',
+                            cursor: 'pointer',
+                            zIndex: 1,
+                            backgroundColor: 'rgba(0,0,0,0.5)',
+                            borderRadius: '50%',
+                            padding: 1,
+                            '&:hover': {
+                                backgroundColor: 'rgba(0,0,0,0.7)',
+                            }
+                        }}
+                    />
+
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            width: { xs: '90vw', sm: '80vw', md: '70vw' },
+                            height: { xs: '90vw', sm: '80vw', md: '70vw' },
+                            maxWidth: '1000px',
+                            maxHeight: '1000px',
+                        }}
+                    >
+                        {selectedImage && (
+                            <Image
+                                src={selectedImage}
+                                alt="Preview"
+                                fill
+                                style={{ objectFit: 'contain' }}
+                                quality={100}
+                                priority
+                            />
+                        )}
+                    </Box>
+                </Box>
+            </Dialog>
+
+            <Footer />
         </Box>
-    </Box>
+    );
+};
 
-}
-export default BusinessPage
+export default BusinessPage;

@@ -1,6 +1,6 @@
 
 import { Box, Container, Typography } from "@mui/material";
-import react from "react";
+import React from "react";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
